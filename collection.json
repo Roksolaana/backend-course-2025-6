@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "5a78fff2-55bc-4e24-80c1-bc6b7631b78e",
+		"name": "collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49202049"
+	},
+	"item": [
+		{
+			"name": "/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "inventory_name",
+							"value": "Laptop",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "My main development laptop",
+							"type": "text"
+						},
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "postman-cloud:///1f0c4b30-2559-4a80-abb4-58ee568b60c1"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/inventory",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/inventory",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"inventory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/inventory/<ID>",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/inventory/59333eb2-40c4-41f6-9f1a-b93a830427ee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"inventory",
+						"59333eb2-40c4-41f6-9f1a-b93a830427ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/inventory/<ID>",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Updated Laptop\",\r\n  \"description\": \"New description for my laptop\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/inventory/59333eb2-40c4-41f6-9f1a-b93a830427ee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"inventory",
+						"59333eb2-40c4-41f6-9f1a-b93a830427ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/inventory/<ID>/photo",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/inventory/59333eb2-40c4-41f6-9f1a-b93a830427ee/photo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"inventory",
+						"59333eb2-40c4-41f6-9f1a-b93a830427ee",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/inventory/<ID>/photo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "photo",
+							"type": "file",
+							"src": "postman-cloud:///1f0c4b89-f158-46a0-af99-55f24f21b5e1"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/inventory/59333eb2-40c4-41f6-9f1a-b93a830427ee/photo",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"inventory",
+						"59333eb2-40c4-41f6-9f1a-b93a830427ee",
+						"photo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/inventory/<ID>",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/inventory/59333eb2-40c4-41f6-9f1a-b93a830427ee",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"inventory",
+						"59333eb2-40c4-41f6-9f1a-b93a830427ee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/RegisterForm.html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/RegisterForm.html",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"RegisterForm.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/SearchForm.html",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/SearchForm.html",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"SearchForm.html"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:3000/search?id=f5b3c496-bca2-4ff7-a4e0-7e9dc0bc811f&includePhoto=on",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "f5b3c496-bca2-4ff7-a4e0-7e9dc0bc811f"
+						},
+						{
+							"key": "includePhoto",
+							"value": "on"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
