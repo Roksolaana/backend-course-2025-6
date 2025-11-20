@@ -292,36 +292,37 @@ app.delete("/inventory/:id", async (req, res) => {
 
   res.status(200).json({ message: "Deleted" });
 });
-
 /**
  * @swagger
  * /search:
- *   get:
- *     summary: Search inventory item by ID
- *     parameters:
- *       - in: query
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *         description: Inventory item ID
- *       - in: query
- *         name: includePhoto
- *         required: false
- *         schema:
- *           type: string
- *           enum: [on]
- *         description: "Use 'on' to include photo URL"
+ *   post:
+ *     summary: Search inventory item by ID (using x-www-form-urlencoded)
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/x-www-form-urlencoded:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               id:
+ *                 type: string
+ *                 description: Inventory item ID (required)
+ *               includePhoto:
+ *                 type: string
+ *                 enum: [on]
+ *                 description: "Set to 'on' to include photo URL"
  *     responses:
  *       200:
  *         description: OK
  *       404:
  *         description: Not found
  */
-app.get("/search", async (req, res) => {
-  const { id, includePhoto } = req.query;
-  const db = await loadDB();
+app.post("/search", async (req, res) => { 
+  const { id, includePhoto } = req.body;
 
+  if (!id) return res.status(400).send("Bad Request: Missing ID");
+
+  const db = await loadDB();
   const item = db.find((i) => i.id == id);
 
   if (!item) return res.status(404).send("Not Found");
@@ -338,7 +339,6 @@ app.get("/search", async (req, res) => {
 
   res.status(200).json(result);
 });
-
 
 app.get('/RegisterForm.html', (req, res) => {
   res.sendFile(path.join(__dirname, 'RegisterForm.html'));
